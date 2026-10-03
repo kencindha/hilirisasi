@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ODL-001",
+    "waktu": "2026-10-01 08:15:00",
+    "lokasi": "Gerbang Tol Cikampek Utama",
+    "nopol": "B 1234 XYZ",
+    "berat_ton": 45,
+    "batas_maksimal_ton": 30,
+    "status": "Pelanggaran Berat"
+  },
+  {
+    "id": "ODL-002",
+    "waktu": "2026-10-01 08:30:00",
+    "lokasi": "Jembatan Timbang Losarang",
+    "nopol": "E 5678 ABC",
+    "berat_ton": 32,
+    "batas_maksimal_ton": 30,
+    "status": "Pelanggaran Ringan"
+  },
+  {
+    "id": "ODL-003",
+    "waktu": "2026-10-01 09:00:00",
+    "lokasi": "Gerbang Tol Palimanan",
+    "nopol": "D 9012 DEF",
+    "berat_ton": 28,
+    "batas_maksimal_ton": 30,
+    "status": "Aman"
+  }
+]
