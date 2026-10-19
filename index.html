@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Konfigurasi Tema Tailwind (Wajib di HTML jika menggunakan CDN) -->
+    <!-- Konfigurasi Tema Tailwind-->
     <script>
         tailwind.config = {
             theme: {
@@ -22,7 +22,7 @@
                     },
                     colors: {
                         primary: '#eab308', // blue-800
-                        secondary: '#0f172a', // kuning-900
+                        secondary: '#0f172a', // biru cuy-900
                         danger: '#ef4444', // red-500
                         safe: '#10b981', // emerald-500
                     }
@@ -31,7 +31,7 @@
         }
     </script>
 
-    <!-- Memanggil file CSS Eksternal (Custom CSS) -->
+    <!-- Memanggil file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-primary selection:text-white">
@@ -40,14 +40,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-    <!-- Panggil file gambar logo Anda di sini -->
+    <!-- Panggil file gambar logo Anda di sini yak -->
     <img src="asset/image/logo.png" alt="Logo ODOLWatch" class="h-10 w-auto">
     
     <!-- (Opsional) Hapus baris <span> di bawah ini jika gambar logo Anda sudah memiliki teks -->
     <span class="font-bold text-xl text-secondary tracking-tight">ZOOMS</span>
 </div>
                 
-                <!-- Desktop Menu -->
+                <!-- Desktop Menu nih-->
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-gray-600 hover:text-primary font-medium transition-colors">Beranda</a>
                     <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">Tentang</a>
@@ -55,7 +55,7 @@
                     <a href="#data" class="text-gray-600 hover:text-primary font-medium transition-colors">Data Pergerakan</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
+                <!-- Mobile Menu Button nih -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -64,7 +64,7 @@
             </div>
         </div>
         
-        <!-- Mobile Menu Panel -->
+        <!-- Mobile Menu Panel nih-->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
                 <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50">Beranda</a>
@@ -182,9 +182,9 @@
                     <div class="absolute top-4 right-4 z-20 text-danger font-mono text-sm font-bold flex items-center gap-1 drop-shadow-md recording-dot">
                         <i class="fa-solid fa-circle text-[8px]"></i> REC
                     </div>
-
-                    <img src="asset/image/contoh.jpg" 
-                         alt="Highway feed" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                    Ubah URL http://127.0.0.1:5000 ini menjadi IP dari Raspberry Pi yak
+                    <img src="http://127.0.0.1:5000/video_feed"
+                         alt="Live YOLO Feed" class="absolute inset-0 w-full h-full object-cover">
                     
                     <div id="ai-box" class="absolute border-2 border-green-500 bg-green-500/10 z-20 transition-all duration-1000 ease-in-out opacity-0 flex flex-col justify-end" style="width: 30%; height: 40%; top: 30%; left: 35%;">
                         <div class="bg-green-500 text-black text-xs font-mono px-1 font-bold whitespace-nowrap self-start">
@@ -255,9 +255,10 @@
                                 <th scope="col" class="px-6 py-4">Waktu Deteksi</th>
                                 <th scope="col" class="px-6 py-4">ID / Plat Nomor</th>
                                 <th scope="col" class="px-6 py-4">Jenis Kendaraan</th>
-                                <th scope="col" class="px-6 py-4">Total Berat (Ton)</th>
-                                <th scope="col" class="px-6 py-4">Dimensi (P x L x T)</th>
+                                <th scope="col" class="px-6 py-4">Akurasi Yolo</th>
+                                <th scope="col" class="px-6 py-4">Bukti</th>
                                 <th scope="col" class="px-6 py-4">Status</th>
+                                <th scope="col" class="px-6 py-4">Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="data-table-body" class="divide-y divide-gray-100 text-sm">
@@ -341,4 +342,92 @@
     <!-- Memanggil File JS -->
     <script src="script.js"></script>
 </body>
+<!-- ========================================== -->
+    <!-- MODAL POP-UP CETAK BUKTI (PRINT TO PDF)    -->
+    <!-- ========================================== -->
+    <style>
+        @media print {
+            /* Sembunyikan semua elemen website saat dicetak, kecuali modal */
+            body > *:not(#printModal) { display: none !important; }
+            #printModal { 
+                display: block !important; 
+                position: absolute; top: 0; left: 0; 
+                width: 100%; height: auto; 
+                background: white; 
+            }
+            .no-print { display: none !important; } /* Sembunyikan tombol batal/cetak */
+            #printArea { padding: 0 !important; }
+        }
+    </style>
+
+    <div id="printModal" class="fixed inset-0 bg-black/70 z-[100] hidden flex items-center justify-center p-4">
+        <!-- Kotak Modal -->
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+            
+            <!-- Header Modal (Tidak ikut ter-print) -->
+            <div class="no-print p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+                <h3 class="text-xl font-bold text-gray-800">Pratinjau Bukti Pelanggaran</h3>
+                <div class="flex gap-2">
+                    <button onclick="closePrintModal()" class="px-4 py-2 text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 font-semibold">Tutup</button>
+                    <!-- Tombol untuk mentrigger browser simpan ke PDF -->
+                    <button onclick="window.print()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-bold flex items-center gap-2 shadow-md">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        Download PDF / Print
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kertas yang akan tercetak (Surat Laporan Resmi) -->
+            <div id="printArea" class="p-8 bg-white text-black">
+                <!-- Kop Surat -->
+                <div class="text-center border-b-4 border-black pb-4 mb-6">
+                    <h1 class="text-2xl font-bold uppercase tracking-wider text-black">Surat Bukti Pelanggaran ODOL</h1>
+                    <p class="text-gray-600">Sistem Deteksi Over Dimension & Over Loading Otomatis</p>
+                </div>
+
+                <!-- Detail Data Pelanggaran -->
+                <div class="grid grid-cols-2 gap-6 mb-8 text-sm">
+                    <div>
+                        <table class="w-full">
+                            <tr><td class="py-1 text-gray-600 w-1/3">Waktu Deteksi</td><td class="font-bold w-2/3" id="print-waktu">: -</td></tr>
+                            <tr><td class="py-1 text-gray-600">Plat Nomor</td><td class="font-bold" id="print-nopol">: -</td></tr>
+                            <tr><td class="py-1 text-gray-600">Jenis Kendaraan</td><td class="font-bold" id="print-jenis">: -</td></tr>
+                            <tr><td class="py-1 text-gray-600">Warna Kendaraan</td><td class="font-bold" id="print-warna">: -</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="w-full">
+                            <tr><td class="py-1 text-gray-600 w-1/3">Status</td><td class="font-bold text-red-600" id="print-status">: -</td></tr>
+                            <tr><td class="py-1 text-gray-600">Akurasi AI YOLO</td><td class="font-bold" id="print-akurasi">: -</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Galeri 3 Sisi -->
+                <h3 class="font-bold mb-3 border-b border-gray-300 pb-1 text-black">Bukti Visual Rangkaian</h3>
+                <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="text-center">
+                        <p class="text-xs font-bold mb-2 text-gray-500 uppercase">Awal Masuk (Depan)</p>
+                        <img id="print-img-depan" src="" class="h-32 w-full object-cover rounded border border-gray-300 shadow-sm">
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs font-bold mb-2 text-gray-500 uppercase">Posisi Tengah</p>
+                        <img id="print-img-samping" src="" class="h-32 w-full object-cover rounded border border-gray-300 shadow-sm">
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xs font-bold mb-2 text-gray-500 uppercase">Meninggalkan Layar</p>
+                        <img id="print-img-belakang" src="" class="h-32 w-full object-cover rounded border border-gray-300 shadow-sm">
+                    </div>
+                </div>
+
+                <!-- Footer Surat / Tanda Tangan -->
+                <div class="flex justify-end mt-12 text-sm text-center">
+                    <div>
+                        <p class="mb-16">Serang, <span id="print-tanggal"></span><br>Sistem AI Terintegrasi</p>
+                        <p class="font-bold underline">Admin Sistem ODOL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>

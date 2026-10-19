@@ -1,29 +1,242 @@
 [
-  {
-    "id": "ODL-001",
-    "waktu": "2026-10-01 08:15:00",
-    "lokasi": "Gerbang Tol Cikampek Utama",
-    "nopol": "B 1234 XYZ",
-    "berat_ton": 45,
-    "batas_maksimal_ton": 30,
-    "status": "Pelanggaran Berat"
-  },
-  {
-    "id": "ODL-002",
-    "waktu": "2026-10-01 08:30:00",
-    "lokasi": "Jembatan Timbang Losarang",
-    "nopol": "E 5678 ABC",
-    "berat_ton": 32,
-    "batas_maksimal_ton": 30,
-    "status": "Pelanggaran Ringan"
-  },
-  {
-    "id": "ODL-003",
-    "waktu": "2026-10-01 09:00:00",
-    "lokasi": "Gerbang Tol Palimanan",
-    "nopol": "D 9012 DEF",
-    "berat_ton": 28,
-    "batas_maksimal_ton": 30,
-    "status": "Aman"
-  }
+    {
+        "waktu": "08:18:00",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "ODOL (Dimensi & Muatan)",
+        "isViolation": true,
+        "akurasi_yolo": "95.0%",
+        "gambar": {
+            "depan": "capture_1792113435_depan.jpg",
+            "samping": "capture_1792113435_samping.jpg",
+            "belakang": "capture_1792113435_belakang.jpg"
+        }
+    },
+    {
+        "waktu": "08:07:35",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "90.0%",
+        "gambar": {
+            "depan": "capture_1792026452_depan.jpg",
+            "samping": "",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:07:30",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "81.9%",
+        "gambar": {
+            "depan": "capture_1792026447_depan.jpg",
+            "samping": "",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:07:22",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "89.4%",
+        "gambar": {
+            "depan": "capture_1792026436_depan.jpg",
+            "samping": "capture_1792026436_samping.jpg",
+            "belakang": "capture_1792026436_belakang.jpg"
+        }
+    },
+    {
+        "waktu": "08:07:11",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "69.2%",
+        "gambar": {
+            "depan": "capture_1792026427_depan.jpg",
+            "samping": "",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:07:07",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "85.6%",
+        "gambar": {
+            "depan": "capture_1792026414_depan.jpg",
+            "samping": "capture_1792026414_samping.jpg",
+            "belakang": "capture_1792026414_belakang.jpg"
+        }
+    },
+    {
+        "waktu": "08:06:53",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "85.8%",
+        "gambar": {
+            "depan": "capture_1792026405_depan.jpg",
+            "samping": "capture_1792026405_samping.jpg",
+            "belakang": "capture_1792026405_belakang.jpg"
+        }
+    },
+    {
+        "waktu": "08:06:43",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "60.0%",
+        "gambar": {
+            "depan": "capture_1792026400_depan.jpg",
+            "samping": "",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:06:30",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "62.1%",
+        "gambar": {
+            "depan": "capture_1792026383_depan.jpg",
+            "samping": "capture_1792026383_samping.jpg",
+            "belakang": "capture_1792026383_belakang.jpg"
+        }
+    },
+    {
+        "waktu": "08:06:21",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "64.3%",
+        "gambar": {
+            "depan": "capture_1792026378_depan.jpg",
+            "samping": "",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:06:16",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "75.4%",
+        "gambar": {
+            "depan": "capture_1792026373_depan.jpg",
+            "samping": "",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:06:07",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "85.2%",
+        "gambar": {
+            "depan": "capture_1792026362_depan.jpg",
+            "samping": "capture_1792026362_samping.jpg",
+            "belakang": "capture_1792026362_belakang.jpg"
+        }
+    },
+    {
+        "waktu": "08:05:58",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "70.2%",
+        "gambar": {
+            "depan": "capture_1792026355_depan.jpg",
+            "samping": "",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:05:51",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "58.5%",
+        "gambar": {
+            "depan": "capture_1792026347_depan.jpg",
+            "samping": "capture_1792026347_samping.jpg",
+            "belakang": ""
+        }
+    },
+    {
+        "waktu": "08:05:45",
+        "nopol": "TERDETEKSI KAMERA",
+        "jenis": "Truk Komersial",
+        "warna": "Dalam Pengecekan",
+        "berat_ton": "-",
+        "dimensi": "Terukur Visual",
+        "kategori_pelanggaran": "Aman Sesuai Aturan",
+        "isViolation": false,
+        "akurasi_yolo": "79.2%",
+        "gambar": {
+            "depan": "capture_1792026339_depan.jpg",
+            "samping": "capture_1792026339_samping.jpg",
+            "belakang": "capture_1792026339_belakang.jpg"
+        }
+    }
 ]

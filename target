@@ -1,0 +1,9 @@
+#Note
+Jalankan 2 kode yaitu backend pada code detect.py, dan index.html di tampilan awal folder
+yang perlu dipastikan 
+apakah website bisa berjalan dengan baik?
+apakah CCTV bisa terintegrasi dengan baik?
+apakah raspberry pi tetap stabil?
+apakah semua sinyal tidak ada gangguan?
+permasalahan diatas dianggap clear jika website bisa berjalan dengan menampilkan hasil dari CCTV
+dan memberikan respon ketika diarahkan pada siaran odol baik secara langsung (lapangan) atau video
